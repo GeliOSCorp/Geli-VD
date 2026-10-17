@@ -1,0 +1,11 @@
+# Geli-VD py1.5 — librerías de Python (los lanzadores iniciar_* las instalan solas)
+yt-dlp[default,curl-cffi]
+pillow
+truststore
+# deno: necesario para YouTube (se instala aquí mismo, sin pasos extra)
+deno
+# Windows: ventana propia para iniciar sesión (usa el Edge que ya trae el sistema)
+playwright; sys_platform == "win32"
+
+# Opcional en Mac/Linux: ventana de sesión y detector de páginas
+#   pip install playwright  &&  playwright install chromium

@@ -1,0 +1,11 @@
+# Compilación
+escritorio/build/
+escritorio/dist/
+escritorio/bin/
+escritorio/salida/
+escritorio/.build-venv/
+escritorio/.venv/
+escritorio/*.spec
+__pycache__/
+*.pyc
+.DS_Store
