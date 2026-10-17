@@ -42,6 +42,7 @@ Entra a [**Releases**](https://github.com/JuanVicente117/Geli-VD/releases/latest
 | Archivo | Para quién |
 |---|---|
 | `Geli-VD-Setup-win1.5.exe` | **Windows 10/11** — instalador. No necesitas nada más. |
+| `Geli-VD-win1.5-portable.zip` | Windows sin instalar: descomprime y abre `Geli-VD.exe`. |
 | `Geli-VD-py1.5.zip` | **macOS, Linux** (y Windows) con Python — para curiosos y programadores. |
 
 ### Windows
