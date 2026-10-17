@@ -9,6 +9,10 @@ Descargador de videos gratuito, sencillo y sin anuncios. Parte del ecosistema **
 
 [**⬇ Descargar la última versión**](https://github.com/JuanVicente117/Geli-VD/releases/latest)
 
+[![Descargas](https://img.shields.io/github/downloads/JuanVicente117/Geli-VD/total?label=descargas&color=6a4cf0)](https://github.com/JuanVicente117/Geli-VD/releases)
+[![Versión](https://img.shields.io/github/v/release/JuanVicente117/Geli-VD?label=versi%C3%B3n&color=6a4cf0)](https://github.com/JuanVicente117/Geli-VD/releases/latest)
+[![Licencia](https://img.shields.io/badge/licencia-GPL--3.0-6a4cf0)](LICENSE)
+
 Windows · macOS · Linux — Android próximamente
 
 </div>
