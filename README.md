@@ -7,10 +7,10 @@
 **Pega, descarga, listo.**
 Descargador de videos gratuito, sencillo y sin anuncios. Parte del ecosistema **Geli**.
 
-[**⬇ Descargar la última versión**](https://github.com/JuanVicente117/Geli-VD/releases/latest)
+[**⬇ Descargar la última versión**](https://github.com/GeliOSCorp/Geli-VD/releases/latest)
 
-[![Descargas](https://img.shields.io/github/downloads/JuanVicente117/Geli-VD/total?label=descargas&color=6a4cf0)](https://github.com/JuanVicente117/Geli-VD/releases)
-[![Versión](https://img.shields.io/github/v/release/JuanVicente117/Geli-VD?label=versi%C3%B3n&color=6a4cf0)](https://github.com/JuanVicente117/Geli-VD/releases/latest)
+[![Descargas](https://img.shields.io/github/downloads/GeliOSCorp/Geli-VD/total?label=descargas&color=6a4cf0)](https://github.com/GeliOSCorp/Geli-VD/releases)
+[![Versión](https://img.shields.io/github/v/release/GeliOSCorp/Geli-VD?label=versi%C3%B3n&color=6a4cf0)](https://github.com/GeliOSCorp/Geli-VD/releases/latest)
 [![Licencia](https://img.shields.io/badge/licencia-GPL--3.0-6a4cf0)](LICENSE)
 
 Windows · macOS · Linux — Android próximamente
@@ -41,7 +41,7 @@ Funciona con YouTube, Dailymotion, Vimeo, TikTok, Instagram, Facebook y
 
 ## Descargar e instalar
 
-Entra a [**Releases**](https://github.com/JuanVicente117/Geli-VD/releases/latest) y elige:
+Entra a [**Releases**](https://github.com/GeliOSCorp/Geli-VD/releases/latest) y elige:
 
 | Archivo | Para quién |
 |---|---|
@@ -82,7 +82,7 @@ La primera vez instala sus librerías solo (un par de minutos). Instrucciones co
 | "Sign in to confirm you're not a bot" | En **Cookies de** elige **Geli (mi sesión)** e inicia sesión en tu cuenta. |
 | Windows: error de cookies de Chrome/Edge | Chrome y Edge protegen sus cookies en Windows. Usa **Geli (mi sesión)** o Firefox. |
 | Un sitio que funcionaba dejó de descargar | Pulsa **⟳ Actualizar motor**. |
-| Otro problema | Abre un [Issue](https://github.com/JuanVicente117/Geli-VD/issues) con una captura del mensaje. |
+| Otro problema | Abre un [Issue](https://github.com/GeliOSCorp/Geli-VD/issues) con una captura del mensaje. |
 
 ---
 
