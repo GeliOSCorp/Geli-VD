@@ -3,40 +3,51 @@
 **Pega, descarga, listo.** Descargador de videos gratuito, sencillo y sin anuncios.
 Parte del ecosistema Geli.
 
-Esta es la **versión Python**: funciona en **macOS, Linux y Windows**. Es ideal si
-quieres ver el código o modificarlo. Si usas Windows y solo quieres instalar y usar,
-mejor descarga la versión **win1.5** (instalador `.exe`).
+Esta es la **versión Python** para macOS, Linux y Windows. Requiere Python 3.10+,
+Tkinter y FFmpeg. Si usas Windows y quieres empezar sin preparar Python,
+[descarga el instalador recomendado](https://github.com/GeliOSCorp/Geli-VD/releases/download/v1.5/Geli-VD-Setup-win1.5.exe).
 
 ---
 
-## Qué necesitas
+## Preparación en macOS y Linux
 
-| | macOS | Linux (Debian/Ubuntu) | Windows |
-|---|---|---|---|
-| **Python 3.10 o más nuevo** | [python.org](https://www.python.org/downloads/) o `brew install python python-tk` | `sudo apt install python3 python3-venv python3-tk` | [python.org](https://www.python.org/downloads/) (marca **"Add python.exe to PATH"**) |
-| **ffmpeg** (unir audio y video, MP3) | `brew install ffmpeg` | `sudo apt install ffmpeg` | `winget install Gyan.FFmpeg` |
+1. [Descarga el paquete Python](https://github.com/GeliOSCorp/Geli-VD/releases/download/v1.5/Geli-VD-py1.5.zip) y extrae todo su contenido en una carpeta
+   donde puedas guardar archivos, por ejemplo Documentos.
+2. Instala **Python 3.10+, Tkinter y FFmpeg**:
+   - **macOS con [Homebrew](https://brew.sh/):** abre Terminal y ejecuta
+     `brew install python python-tk ffmpeg`. Si no tienes Homebrew, consulta primero su
+     guía de instalación. Comprueba que Tkinter corresponde al Python que vas a utilizar.
+   - **Debian/Ubuntu:** `sudo apt install python3 python3-venv python3-tk ffmpeg`.
+     Comprueba que `python3 --version` sea 3.10 o posterior.
+3. Abre una terminal **dentro de la carpeta que contiene el lanzador**:
+   - **macOS:**
+     ```sh
+     chmod +x iniciar_mac.command
+     ./iniciar_mac.command
+     ```
+     Después puedes abrir `iniciar_mac.command` con doble clic. Si macOS lo bloquea,
+     revisa el aviso de seguridad y confirma la procedencia del archivo antes de autorizarlo.
+   - **Linux:**
+     ```sh
+     chmod +x iniciar_linux.sh
+     ./iniciar_linux.sh
+     ```
 
-Las librerías de Python (yt-dlp, Pillow, deno…) **se instalan solas** la primera vez que
-abres la app con el lanzador. deno (necesario para YouTube) viene incluido ahí mismo.
+El primer inicio **requiere Internet** para crear el entorno `.venv` e instalar las
+dependencias. El tiempo depende de tu conexión y equipo. No cierres la terminal durante
+la preparación. Consulta la [guía completa](https://github.com/GeliOSCorp/Geli-VD/blob/main/escritorio/LEEME.md)
+si aparece un error.
 
----
+## Preparación en Windows con Python
 
-## Cómo abrirla
+1. Instala [Python 3.10 o posterior](https://www.python.org/downloads/) con Tkinter y marca
+   **Add python.exe to PATH**.
+2. Instala FFmpeg: `winget install Gyan.FFmpeg`. Vuelve a abrir la terminal después de instalarlo.
+3. Extrae todo el ZIP y abre `iniciar_windows.bat` con doble clic desde la carpeta extraída.
+4. Mantén Internet disponible durante el primer inicio para instalar las dependencias en `.venv`.
 
-1. Descomprime la carpeta donde quieras (por ejemplo, en Documentos).
-2. Abre el lanzador de tu sistema:
-
-| Sistema | Lanzador | Notas |
-|---|---|---|
-| **macOS** | `iniciar_mac.command` | La primera vez: **clic derecho → Abrir** (macOS bloquea archivos descargados de internet). |
-| **Linux** | `iniciar_linux.sh` | En una terminal: `chmod +x iniciar_linux.sh && ./iniciar_linux.sh` |
-| **Windows** | `iniciar_windows.bat` | Doble clic. Si Windows avisa, elige **Más información → Ejecutar de todas formas**. |
-
-La primera vez tarda un par de minutos (prepara su entorno en la carpeta `.venv`).
-Después abre en segundos.
-
-> ¿Prefieres hacerlo a mano? `pip install -r requirements.txt` y luego
-> `python3 descargador_video.py`.
+Las dependencias del lanzador incluyen el paquete Deno, utilizado por el motor para YouTube.
+Si la preparación falla, conserva el mensaje de error para solicitar ayuda.
 
 ---
 
@@ -52,8 +63,9 @@ Después abre en segundos.
 - **Cookies de:** para sitios que piden iniciar sesión (Instagram, videos privados, o si
   YouTube dice "confirma que no eres un bot"):
   - **Geli (mi sesión)** (recomendado, sobre todo en Windows): se abre una ventana, entras a
-    tu cuenta y la cierras. La sesión queda guardada solo en tu equipo, protegida (en
-    Windows, cifrada para tu usuario) y se cierra sola tras 30 días sin uso.
+    tu cuenta y la cierras. La sesión se guarda localmente y caduca tras 30 días sin uso.
+    En Windows se cifra con DPAPI cuando está disponible; si falla, puede guardarse sin cifrar.
+    En macOS/Linux utiliza un archivo sin cifrar con permisos restringidos al usuario.
     Consejo: usa una cuenta secundaria para descargar.
     También en **Herramientas → Iniciar sesión**.
   - **Tu navegador** (Safari, Chrome, Firefox…): en Mac y Linux funciona con cualquiera. En
@@ -72,7 +84,8 @@ Los sitios de video cambian seguido y a veces una descarga que antes funcionaba 
 de hacerlo. El botón **⟳ Actualizar motor** (arriba, junto a la versión) actualiza
 solo el **motor de descargas** (yt-dlp), sin reinstalar nada. La app revisa al abrir
 si hay uno nuevo y, si lo hay, el botón se pinta de morado. Después de actualizar,
-la app se reabre sola con un clic.
+la app se reabre sola con un clic. Actualizar puede resolver errores por cambios de los sitios,
+pero no garantiza el acceso a todos los videos ni permite descargar contenido con DRM.
 
 ---
 
@@ -99,7 +112,7 @@ condiciones de cada sitio. Los videos con DRM no se pueden descargar.
 | "Failed to decrypt with DPAPI" / "Could not copy Chrome cookie database" | Es Chrome/Edge en Windows. Usa **Geli (mi sesión)** o Firefox. |
 | "No se encontró ffmpeg" | Instálalo con el comando de la tabla de arriba y vuelve a abrir la app. |
 | Un sitio que funcionaba dejó de descargar | Pulsa **⟳ Actualizar motor**. |
-| macOS: "no se puede abrir porque es de un desarrollador no identificado" | Clic derecho sobre el lanzador → **Abrir**. |
+| macOS bloquea el lanzador | Verifica que descargaste el paquete oficial y revisa las opciones que ofrece el aviso de seguridad del sistema. |
 | Falta tkinter | macOS (Homebrew): `brew install python-tk` · Linux: `sudo apt install python3-tk` |
 
 ---

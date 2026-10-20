@@ -2,18 +2,21 @@
 
 <img src="escritorio/icono.png" width="96" alt="Geli-VD">
 
-# Geli-VD
+# Geli-VD — Descargador de videos y audio
 
 **Pega, descarga, listo.**
-Descargador de videos gratuito, sencillo y sin anuncios. Parte del ecosistema **Geli**.
+Descarga videos y audio de sitios compatibles. Gratis y sin anuncios. Parte del ecosistema **Geli**.
 
-[**⬇ Descargar la última versión**](https://github.com/GeliOSCorp/Geli-VD/releases/latest)
+[**⬇ Descargar para Windows 10/11 — recomendado (v1.5 · 141 MB)**](https://github.com/GeliOSCorp/Geli-VD/releases/download/v1.5/Geli-VD-Setup-win1.5.exe)
 
-[![Descargas](https://img.shields.io/github/downloads/GeliOSCorp/Geli-VD/total?label=descargas&color=6a4cf0)](https://github.com/GeliOSCorp/Geli-VD/releases)
+[Windows portable](https://github.com/GeliOSCorp/Geli-VD/releases/download/v1.5/Geli-VD-win1.5-portable.zip) · [macOS / Linux (Python)](#macos--linux-versión-python) · [Todas las versiones](https://github.com/GeliOSCorp/Geli-VD/releases)
+
 [![Versión](https://img.shields.io/github/v/release/GeliOSCorp/Geli-VD?label=versi%C3%B3n&color=6a4cf0)](https://github.com/GeliOSCorp/Geli-VD/releases/latest)
 [![Licencia](https://img.shields.io/badge/licencia-GPL--3.0-6a4cf0)](LICENSE)
 
-Windows · macOS · Linux — Android próximamente
+**Windows:** instalador y portable · **macOS / Linux:** versión Python
+
+Contenido protegido con DRM no compatible.
 
 </div>
 
@@ -33,45 +36,82 @@ Funciona con YouTube, Dailymotion, Vimeo, TikTok, Instagram, Facebook y
 - **⟳ Actualizar motor**: cuando un sitio cambia y deja de descargar, se actualiza con
   un clic, **sin reinstalar** la app.
 - **Iniciar sesión** para videos que la piden (YouTube "no eres un bot", Instagram…):
-  la sesión queda guardada cifrada solo en tu equipo y se cierra sola tras 30 días sin uso.
+  la sesión se guarda localmente y caduca tras 30 días sin uso. Consulta los detalles de
+  protección en [Privacidad](#privacidad).
 - Tema claro u oscuro según tu sistema.
-- **Sin anuncios, sin instaladores con trampas, sin enviar tus datos a ningún lado.**
+- **Sin anuncios.** Descargas, historial y preferencias se gestionan en tu equipo.
 
 ---
 
 ## Descargar e instalar
 
-Entra a [**Releases**](https://github.com/GeliOSCorp/Geli-VD/releases/latest) y elige:
+| Opción | Descarga | Tamaño aproximado | Requisitos |
+|---|---|---|---|
+| **Windows 10/11 — recomendado** | [Instalador .exe](https://github.com/GeliOSCorp/Geli-VD/releases/download/v1.5/Geli-VD-Setup-win1.5.exe) | 141 MB | No necesitas instalar Python por separado. |
+| Windows — sin instalación | [Portable .zip](https://github.com/GeliOSCorp/Geli-VD/releases/download/v1.5/Geli-VD-win1.5-portable.zip) | 196 MB | Extrae todo el ZIP y abre `Geli-VD.exe` desde la carpeta extraída. |
+| macOS / Linux — versión Python | [Paquete Python .zip](https://github.com/GeliOSCorp/Geli-VD/releases/download/v1.5/Geli-VD-py1.5.zip) | 64 kB | Python 3.10+, Tkinter y FFmpeg. También disponible para Windows con Python. |
 
-| Archivo | Para quién |
-|---|---|
-| `Geli-VD-Setup-win1.5.exe` | **Windows 10/11** — instalador. No necesitas nada más. |
-| `Geli-VD-win1.5-portable.zip` | Windows sin instalar: descomprime y abre `Geli-VD.exe`. |
-| `Geli-VD-py1.5.zip` | **macOS, Linux** (y Windows) con Python — para curiosos y programadores. |
+Los tamaños son decimales y corresponden a los archivos de la release 1.5. El paquete
+Python descarga dependencias al primer inicio; su ZIP no representa el espacio total instalado.
 
-### Windows
+**¿Cuál elijo?** Si usas Windows y quieres empezar, elige el instalador.
+Si prefieres usarlo sin instalar, elige el portable. Para macOS o Linux, utiliza el paquete Python.
+Los archivos **Source code** de GitHub contienen el código del repositorio; para usar la app,
+elige uno de los paquetes anteriores.
 
-1. Descarga y abre `Geli-VD-Setup-win1.5.exe`.
-2. Windows puede mostrar **"Windows protegió su PC"**: elige **Más información →
-   Ejecutar de todas formas**. Aparece porque el programa es nuevo y aún no está firmado
-   digitalmente.
-3. Sigue el instalador. No pide permisos de administrador.
+### Windows: instalar o usar el portable
 
-Para actualizar, instala la versión nueva **encima**: no hace falta desinstalar y se
-conservan tu historial y preferencias.
+**Instalador (recomendado):**
+1. [Descarga el instalador de Geli-VD 1.5](https://github.com/GeliOSCorp/Geli-VD/releases/download/v1.5/Geli-VD-Setup-win1.5.exe).
+2. Abre `Geli-VD-Setup-win1.5.exe` y sigue el asistente. No pide permisos de administrador.
+3. Abre Geli-VD desde el acceso directo creado por el instalador.
 
-### macOS / Linux (versión Python)
+**Portable:** [descarga el ZIP](https://github.com/GeliOSCorp/Geli-VD/releases/download/v1.5/Geli-VD-win1.5-portable.zip), haz clic derecho → **Extraer todo**
+y abre `Geli-VD.exe` dentro de la carpeta extraída. Conserva juntos los archivos del paquete;
+no ejecutes el programa desde dentro del ZIP.
 
-1. Descarga y descomprime `Geli-VD-py1.5.zip`.
-2. Instala **Python 3.10+** y **ffmpeg**:
-   - macOS: `brew install python python-tk ffmpeg`
-   - Debian/Ubuntu: `sudo apt install python3 python3-venv python3-tk ffmpeg`
-3. Abre el lanzador:
-   - macOS: `iniciar_mac.command` (la primera vez: **clic derecho → Abrir**)
-   - Linux: `./iniciar_linux.sh`
+**Aviso de Windows:** el ejecutable aún no está firmado digitalmente y Windows puede mostrar
+«Windows protegió su PC». Verifica que lo descargaste de esta release oficial.
+Si decides continuar, selecciona **Más información → Ejecutar de todas formas**.
+No es necesario desactivar el antivirus.
 
-La primera vez instala sus librerías solo (un par de minutos). Instrucciones completas en
-[`escritorio/LEEME.md`](escritorio/LEEME.md).
+**Actualizar el instalador:** instala la versión nueva encima; se conservan el historial
+y las preferencias.
+
+### macOS / Linux: versión Python
+
+1. [Descarga el paquete Python](https://github.com/GeliOSCorp/Geli-VD/releases/download/v1.5/Geli-VD-py1.5.zip) y extrae todo su contenido en una carpeta
+   donde puedas guardar archivos, por ejemplo Documentos.
+2. Instala **Python 3.10+, Tkinter y FFmpeg**:
+   - **macOS con [Homebrew](https://brew.sh/):** abre Terminal y ejecuta
+     `brew install python python-tk ffmpeg`. Si no tienes Homebrew, consulta primero su
+     guía de instalación. Comprueba que Tkinter corresponde al Python que vas a utilizar.
+   - **Debian/Ubuntu:** `sudo apt install python3 python3-venv python3-tk ffmpeg`.
+     Comprueba que `python3 --version` sea 3.10 o posterior.
+3. Abre una terminal **dentro de la carpeta que contiene el lanzador**:
+   - **macOS:**
+     ```sh
+     chmod +x iniciar_mac.command
+     ./iniciar_mac.command
+     ```
+     Después puedes abrir `iniciar_mac.command` con doble clic. Si macOS lo bloquea,
+     revisa el aviso de seguridad y confirma la procedencia del archivo antes de autorizarlo.
+   - **Linux:**
+     ```sh
+     chmod +x iniciar_linux.sh
+     ./iniciar_linux.sh
+     ```
+
+El primer inicio **requiere Internet** para crear el entorno `.venv` e instalar las
+dependencias. El tiempo depende de tu conexión y equipo. No cierres la terminal durante
+la preparación. Consulta la [guía completa](https://github.com/GeliOSCorp/Geli-VD/blob/main/escritorio/LEEME.md)
+si aparece un error.
+
+### Tu primera descarga
+
+1. Pega el enlace de un video compatible.
+2. Elige el formato (MP4, MP3 o M4A), la calidad y la carpeta de destino.
+3. Pulsa **Descargar**. Algunos sitios o videos requieren iniciar sesión.
 
 ---
 
@@ -94,11 +134,23 @@ DRM no se pueden descargar.
 
 ## Privacidad
 
-Geli-VD funciona solo en tu equipo: no tiene servidores ni recopila datos. Solo se conecta a
-los sitios de los videos que pegas y, para "Actualizar motor", a PyPI/GitHub para saber si
-hay una versión nueva.
+Geli-VD procesa las descargas en tu equipo, sin un servidor propio que las intermedie.
+El historial y las preferencias se guardan localmente. La app se conecta a los sitios de los
+videos y sus servicios asociados; también consulta PyPI para comprobar actualizaciones del
+motor y descarga dependencias cuando corresponde.
+
+La sesión «Geli (mi sesión)» se guarda localmente: en Windows usa DPAPI cuando está
+disponible; en macOS/Linux se almacena con permisos restringidos al usuario, sin cifrado.
+Si DPAPI falla en Windows, el código permite guardar la sesión sin cifrar.
+Puedes borrar los datos desde **Historial → Borrar todos los datos de la app**.
 
 ---
+
+## Próximamente
+
+Android está previsto; esta release no incluye una aplicación Android.
+
+[![Descargas](https://img.shields.io/github/downloads/GeliOSCorp/Geli-VD/total?label=descargas&color=6a4cf0)](https://github.com/GeliOSCorp/Geli-VD/releases)
 
 ## Para desarrolladores
 
