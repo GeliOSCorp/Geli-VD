@@ -23,7 +23,7 @@ un solo color de acento, nombre corto Geli-VD y sin el aviso del PO Token de You
 
 APP_NOMBRE = "Geli-VideoDownloader"     # nombre interno (no cambiar: define la carpeta de datos)
 APP_CORTO = "Geli-VD"                   # nombre visible
-APP_VERSION_NUM = "1.5"   # py1.5 al correr con Python, win1.5 en el .exe
+APP_VERSION_NUM = "1.5.1"   # py1.5.1 con Python, win1.5.1 en el .exe
 
 import importlib.machinery
 import io
@@ -340,6 +340,38 @@ def es_error_cookies(msg):
     m = str(msg).lower()
     return "dpapi" in m or ("cookie" in m and any(
         p in m for p in ("decrypt", "could not copy", "database", "keyring", "app-bound")))
+
+
+def es_enlace_dailymotion(url):
+    host=(urlparse(url).hostname or '').lower()
+    return host in ('dai.ly','dailymotion.com') or bool(re.fullmatch(r'(?:[a-z0-9-]+\.)*dailymotion\.[a-z]{2,3}',host))
+
+
+def renovar_autorizacion_dailymotion(url):
+    """Drop extractor-level bearer state between independent operations.
+
+    YoutubeDL objects are new per operation, but Dailymotion's _HEADERS dict
+    belongs to the extractor class and otherwise survives changes of cookie mode.
+    No saved account session is deleted and no other site's extractor is touched.
+    """
+    if not es_enlace_dailymotion(url):return
+    try:
+        from yt_dlp.extractor import dailymotion
+        base=dailymotion.DailymotionBaseInfoExtractor
+        for candidate in vars(dailymotion).values():
+            if isinstance(candidate,type) and issubclass(candidate,base):
+                headers=getattr(candidate,'_HEADERS',None)
+                if isinstance(headers,dict):
+                    candidate._HEADERS={k:v for k,v in headers.items() if k.lower()!='authorization'}
+    except (ImportError,AttributeError):
+        # A future engine may no longer use this state; no reset is then needed.
+        pass
+
+
+def es_401_metadata_dailymotion(url,error):
+    text=str(error).lower()
+    return (es_enlace_dailymotion(url) and bool(re.search(r'\b401\b',text))
+            and 'unable to download json metadata' in text)
 
 
 def version_mayor(a, b):
@@ -2162,11 +2194,24 @@ class App(tk.Tk):
             borrar_archivo(tmp)
 
     def _extraer_simple(self, op, url, download):
-        """extract_info; si fallan las cookies del navegador, sigue sin ellas y avisa."""
+        """Fresh Dailymotion authorization; retry only a metadata 401 once.
+
+        A metadata failure happens before video transfer. Do not retry arbitrary
+        download/manifest errors, private/DRM messages or unrelated platforms.
+        """
+        renovar_autorizacion_dailymotion(url)
         try:
             with yt_dlp.YoutubeDL(op) as ydl:
                 return ydl.extract_info(url, download=download), ydl
         except Exception as e:
+            if es_401_metadata_dailymotion(url,e):
+                renovar_autorizacion_dailymotion(url)
+                retry={k:v for k,v in op.items() if k not in (
+                    'cookiefile','cookiesfrombrowser','username','password','usenetrc')}
+                self.cola.put(("log", "ℹ Renovando la conexión con Dailymotion. "
+                               "Se reintentará una vez sin la sesión para este enlace.", "aviso"))
+                with yt_dlp.YoutubeDL(retry) as ydl:
+                    return ydl.extract_info(url, download=download), ydl
             if "cookiesfrombrowser" not in op or not es_error_cookies(e):
                 raise
             nav = op["cookiesfrombrowser"][0]
@@ -2175,8 +2220,7 @@ class App(tk.Tk):
                                   f". Sigo sin cookies; si el sitio pide iniciar sesión, "
                                   f"elige «{OPC_SESION}» en «Cookies de».", "aviso"))
             op = {k: v for k, v in op.items() if k != "cookiesfrombrowser"}
-            with yt_dlp.YoutubeDL(op) as ydl:
-                return ydl.extract_info(url, download=download), ydl
+            return self._extraer_simple(op,url,download)
 
     def _extraer_con_reintento(self, op, url):
         """Descarga; si el formato pedido no existe, reintenta con lo mejor disponible."""
@@ -2560,3 +2604,4 @@ if __name__ == "__main__":
             subprocess.run([sys.executable, "-m", "pip", "install", "-U", "yt-dlp[default,curl-cffi]"])
     else:
         App().mainloop()
+
