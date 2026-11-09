@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+release/
+dist/
+*.spec
+*.log
+*.tmp
+cookies*.txt
+sessions/
+profiles/
+userdata/
+.env

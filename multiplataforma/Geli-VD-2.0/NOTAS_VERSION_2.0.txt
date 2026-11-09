@@ -1,0 +1,7 @@
+Geli-VD 2.0 — Código fuente + constructor Windows
+
+NUEVO: Facebook Stories detectadas antes del extractor; mensaje amistoso sin pedir cuenta ni cambiar motor.
+NUEVO: constructor PyInstaller portable (onedir) + Inno Setup instalador, ambos desde Windows.
+NUEVO: subcomandos del ejecutable para workers multimotor y pip incluido.
+CONSERVADO: sesiones, motores, Deno, descargas, temas, Firefox y Chromium.
+ATENCIÓN: el cifrado propio de cookies sigue pendiente y PySide6/FFmpeg requieren revisión de licencia antes de la release pública.

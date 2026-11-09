@@ -1,0 +1,6 @@
+PySide6>=6.7,<7
+Pillow>=10.0
+yt-dlp[default,curl-cffi]>=2026.10.26
+certifi>=2024.0
+truststore>=0.10
+playwright>=1.56,<2
