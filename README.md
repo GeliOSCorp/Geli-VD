@@ -9,7 +9,7 @@ Descarga videos y audio de sitios compatibles. Gratis y sin anuncios. Parte del 
 
 [**⬇ Descargar para Windows 10/11 — recomendado (v2.0.0 · 96 MB)**](https://github.com/GeliOSCorp/Geli-VD/releases/download/v2.0.0/Geli-VD-2.0.0-Setup-Windows.exe)
 
-[Windows portable](https://github.com/GeliOSCorp/Geli-VD/releases/download/v2.0.0/Geli-VD-2.0.0-Portable-Windows.zip) · [macOS / Linux (código fuente)](#macos--linux-versión-python) · [Todas las versiones](https://github.com/GeliOSCorp/Geli-VD/releases)
+[Windows portable](https://github.com/GeliOSCorp/Geli-VD/releases/download/v2.0.0/Geli-VD-2.0.0-Portable-Windows.zip) · [macOS / Linux (código fuente)](#macos--linux-versión-python) · [Todas las versiones (incluida v1.5)](https://github.com/GeliOSCorp/Geli-VD/releases)
 
 [![Versión](https://img.shields.io/github/v/release/GeliOSCorp/Geli-VD?label=versi%C3%B3n&color=6a4cf0)](https://github.com/GeliOSCorp/Geli-VD/releases/latest)
 [![Licencia](https://img.shields.io/badge/licencia-GPL--3.0-6a4cf0)](LICENSE)
@@ -20,7 +20,16 @@ Contenido protegido con DRM no compatible.
 
 </div>
 
-<p align="center"><img src="docs/captura.png" width="760" alt="Geli-VD en funcionamiento"></p>
+<p align="center"><img src="docs/captura.png" width="900" alt="Geli-VD 2.0 en tema claro, con vista previa y controles de descarga"></p>
+
+<p align="center"><em>Interfaz disponible en tema claro y oscuro, con gestión de cuentas por plataforma.</em></p>
+
+<table>
+<tr>
+<td align="center"><img src="docs/captura-oscuro.png" width="440" alt="Geli-VD 2.0 en tema oscuro"><br><sub>Tema oscuro</sub></td>
+<td align="center"><img src="docs/cuentas.png" width="440" alt="Panel Mis cuentas para administrar sesiones de plataformas"><br><sub>Panel «Mis cuentas»</sub></td>
+</tr>
+</table>
 
 ---
 
@@ -35,9 +44,9 @@ Funciona con YouTube, Dailymotion, Vimeo, TikTok, Instagram, Facebook y
 - **Historial** de descargas (se puede borrar o desactivar).
 - **⟳ Actualizar motor**: cuando un sitio cambia y deja de descargar, se actualiza con
   un clic, **sin reinstalar** la app.
-- **Iniciar sesión** para videos que la piden (YouTube "no eres un bot", Instagram…):
-  la sesión se guarda localmente y caduca tras 30 días sin uso. Consulta los detalles de
-  protección en [Privacidad](#privacidad).
+- **Mis cuentas:** añade sitios y gestiona cada sesión por plataforma. Puedes conectarte
+  mediante una ventana propia de Firefox o importar una sesión cuando tú lo decides.
+  Las cookies quedan locales; revisa la limitación de cifrado en [Privacidad](#privacidad).
 - Tema claro u oscuro según tu sistema.
 - **Sin anuncios.** Descargas, historial y preferencias se gestionan en tu equipo.
 
@@ -51,7 +60,7 @@ Funciona con YouTube, Dailymotion, Vimeo, TikTok, Instagram, Facebook y
 | Windows — sin instalación | [Portable .zip](https://github.com/GeliOSCorp/Geli-VD/releases/download/v2.0.0/Geli-VD-2.0.0-Portable-Windows.zip) | 130 MB | Extrae todo el ZIP y abre `Geli-VD.exe` desde la carpeta extraída. |
 | macOS / Linux — código fuente | [Código multiplataforma](https://github.com/GeliOSCorp/Geli-VD/blob/main/multiplataforma/Geli-VD-2.0/README.md) | — | Python 3.11–3.13, FFmpeg y dependencias de Qt. |
 
-Los tamaños son aproximados y corresponden a los paquetes publicados en la release v2.0.0. Para macOS y Linux se publica el código fuente multiplataforma; el paquete ejecutable de esta release es para Windows.
+Los tamaños son aproximados y corresponden a los paquetes publicados para Geli-VD 2.0 (tag técnico: `v2.0.0`). Para macOS y Linux se publica el código fuente multiplataforma; el paquete ejecutable de esta release es para Windows.
 
 **¿Cuál elijo?** Si usas Windows y quieres empezar, elige el instalador.
 Si prefieres usarlo sin instalar, elige el portable. En macOS o Linux, sigue las instrucciones del código fuente multiplataforma.
@@ -61,7 +70,7 @@ elige uno de los paquetes anteriores.
 ### Windows: instalar o usar el portable
 
 **Instalador (recomendado):**
-1. [Descarga el instalador de Geli-VD 2.0.0](https://github.com/GeliOSCorp/Geli-VD/releases/download/v2.0.0/Geli-VD-2.0.0-Setup-Windows.exe).
+1. [Descarga el instalador de Geli-VD 2.0](https://github.com/GeliOSCorp/Geli-VD/releases/download/v2.0.0/Geli-VD-2.0.0-Setup-Windows.exe).
 2. Abre `Geli-VD-2.0.0-Setup-Windows.exe` y sigue el asistente. No pide permisos de administrador.
 3. Abre Geli-VD desde el acceso directo creado por el instalador.
 
@@ -79,7 +88,7 @@ y las preferencias.
 
 ### macOS / Linux: ejecutar desde el código fuente
 
-La release 2.0.0 no incluye un paquete precompilado para macOS o Linux. Revisa los requisitos y los pasos de ejecución en el [README multiplataforma](multiplataforma/Geli-VD-2.0/README.md); se requiere Python 3.11–3.13, FFmpeg y acceso a Internet para instalar dependencias.
+Geli-VD 2.0 no incluye un paquete precompilado para macOS o Linux. Revisa los requisitos y los pasos de ejecución en el [README multiplataforma](multiplataforma/Geli-VD-2.0/README.md); se requiere Python 3.11–3.13, FFmpeg y acceso a Internet para instalar dependencias. El identificador técnico de la release de GitHub es `v2.0.0`.
 
 ---
 
@@ -115,8 +124,9 @@ El historial y las preferencias se guardan localmente. La app se conecta a los s
 videos y sus servicios asociados; también consulta PyPI para comprobar actualizaciones del
 motor y descarga dependencias cuando corresponde.
 
-Las cookies de sesión se guardan localmente y no se cifran en esta versión. Trátalas como credenciales: no compartas la carpeta de datos ni subas cookies o perfiles a GitHub. Geli-VD no copia cookies del navegador personal.
-Puedes borrar los datos desde **Historial → Borrar todos los datos de la app**.
+Desde **Mis cuentas** puedes añadir plataformas y administrar sesiones individualmente. Para iniciar sesión, Geli-VD usa Firefox en una ventana propia o permite importar una sesión cuando tú lo decides.
+
+Las cookies se guardan localmente, pero v2.0 no aplica cifrado propio a esos archivos. Trátalas como credenciales: evita compartir la carpeta de datos ni subir cookies o perfiles a GitHub. Geli-VD no copia cookies del navegador personal. Puedes borrar los datos desde **Historial → Borrar todos los datos de la app**.
 
 ---
 
