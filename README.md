@@ -9,12 +9,12 @@ Descarga videos y audio de sitios compatibles. Gratis y sin anuncios. Parte del 
 
 [**⬇ Descargar para Windows 10/11 — recomendado (v2.0.0 · 96 MB)**](https://github.com/GeliOSCorp/Geli-VD/releases/download/v2.0.0/Geli-VD-2.0.0-Setup-Windows.exe)
 
-[Windows portable](https://github.com/GeliOSCorp/Geli-VD/releases/download/v2.0.0/Geli-VD-2.0.0-Portable-Windows.zip) · [macOS / Linux (Python)](#macos--linux-versión-python) · [Todas las versiones](https://github.com/GeliOSCorp/Geli-VD/releases)
+[Windows portable](https://github.com/GeliOSCorp/Geli-VD/releases/download/v2.0.0/Geli-VD-2.0.0-Portable-Windows.zip) · [macOS / Linux (código fuente)](#macos--linux-versión-python) · [Todas las versiones](https://github.com/GeliOSCorp/Geli-VD/releases)
 
 [![Versión](https://img.shields.io/github/v/release/GeliOSCorp/Geli-VD?label=versi%C3%B3n&color=6a4cf0)](https://github.com/GeliOSCorp/Geli-VD/releases/latest)
 [![Licencia](https://img.shields.io/badge/licencia-GPL--3.0-6a4cf0)](LICENSE)
 
-**Windows:** instalador y portable · **macOS / Linux:** versión Python
+**Windows:** instalador y portable · **macOS / Linux:** código fuente
 
 Contenido protegido con DRM no compatible.
 
@@ -49,12 +49,12 @@ Funciona con YouTube, Dailymotion, Vimeo, TikTok, Instagram, Facebook y
 |---|---|---|---|
 | **Windows 10/11 — recomendado** | [Instalador .exe](https://github.com/GeliOSCorp/Geli-VD/releases/download/v2.0.0/Geli-VD-2.0.0-Setup-Windows.exe) | 96 MB | No necesitas instalar Python por separado. |
 | Windows — sin instalación | [Portable .zip](https://github.com/GeliOSCorp/Geli-VD/releases/download/v2.0.0/Geli-VD-2.0.0-Portable-Windows.zip) | 130 MB | Extrae todo el ZIP y abre `Geli-VD.exe` desde la carpeta extraída. |
-| macOS / Linux — versión Python | [Paquete Python .zip](https://github.com/GeliOSCorp/Geli-VD/tree/main/multiplataforma/Geli-VD-2.0) | fuente | Python 3.10+, Tkinter y FFmpeg. También disponible para Windows con Python. |
+| macOS / Linux — código fuente | [Código multiplataforma](https://github.com/GeliOSCorp/Geli-VD/blob/main/multiplataforma/Geli-VD-2.0/README.md) | — | Python 3.11–3.13, FFmpeg y dependencias de Qt. |
 
 Los tamaños son aproximados y corresponden a los paquetes publicados en la release v2.0.0. Para macOS y Linux se publica el código fuente multiplataforma; el paquete ejecutable de esta release es para Windows.
 
 **¿Cuál elijo?** Si usas Windows y quieres empezar, elige el instalador.
-Si prefieres usarlo sin instalar, elige el portable. Para macOS o Linux, utiliza el paquete Python.
+Si prefieres usarlo sin instalar, elige el portable. En macOS o Linux, sigue las instrucciones del código fuente multiplataforma.
 Los archivos **Source code** de GitHub contienen el código del repositorio; para usar la app,
 elige uno de los paquetes anteriores.
 
@@ -77,34 +77,11 @@ No es necesario desactivar el antivirus.
 **Actualizar el instalador:** instala la versión nueva encima; se conservan el historial
 y las preferencias.
 
-### macOS / Linux: versión Python
+### macOS / Linux: ejecutar desde el código fuente
 
-1. [Consulta el código fuente multiplataforma](https://github.com/GeliOSCorp/Geli-VD/tree/main/multiplataforma/Geli-VD-2.0) y extrae todo su contenido en una carpeta
-   donde puedas guardar archivos, por ejemplo Documentos.
-2. Instala **Python 3.10+, Tkinter y FFmpeg**:
-   - **macOS con [Homebrew](https://brew.sh/):** abre Terminal y ejecuta
-     `brew install python python-tk ffmpeg`. Si no tienes Homebrew, consulta primero su
-     guía de instalación. Comprueba que Tkinter corresponde al Python que vas a utilizar.
-   - **Debian/Ubuntu:** `sudo apt install python3 python3-venv python3-tk ffmpeg`.
-     Comprueba que `python3 --version` sea 3.10 o posterior.
-3. Abre una terminal **dentro de la carpeta que contiene el lanzador**:
-   - **macOS:**
-     ```sh
-     chmod +x iniciar_mac.command
-     ./iniciar_mac.command
-     ```
-     Después puedes abrir `iniciar_mac.command` con doble clic. Si macOS lo bloquea,
-     revisa el aviso de seguridad y confirma la procedencia del archivo antes de autorizarlo.
-   - **Linux:**
-     ```sh
-     chmod +x iniciar_linux.sh
-     ./iniciar_linux.sh
-     ```
+La release 2.0.0 no incluye un paquete precompilado para macOS o Linux. Revisa los requisitos y los pasos de ejecución en el [README multiplataforma](multiplataforma/Geli-VD-2.0/README.md); se requiere Python 3.11–3.13, FFmpeg y acceso a Internet para instalar dependencias.
 
-El primer inicio **requiere Internet** para crear el entorno `.venv` e instalar las
-dependencias. El tiempo depende de tu conexión y equipo. No cierres la terminal durante
-la preparación. Consulta la [guía completa](https://github.com/GeliOSCorp/Geli-VD/blob/main/escritorio/LEEME.md)
-si aparece un error.
+---
 
 ### Tu primera descarga
 
